@@ -9,7 +9,31 @@ window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
 
+// require('jquery-ui');
+require('./material-dashboard-pro/jquery-ui.min');
+
 require('bootstrap-sass');
+
+// material-dashboard-pro
+require('./material-dashboard-pro/material.min');
+require('./material-dashboard-pro/perfect-scrollbar.jquery.min');
+require('./material-dashboard-pro/jquery.validate.min');
+require('moment');
+window.Chartist = require('chartist-webpack');
+require('./material-dashboard-pro/jquery.bootstrap-wizard');
+require('./material-dashboard-pro/bootstrap-notify');
+require('./material-dashboard-pro/jquery-jvectormap');
+require('./material-dashboard-pro/nouislider.min');
+require('./material-dashboard-pro/jquery.select-bootstrap');
+// require('./material-dashboard-pro/jquery.datatables');
+require('datatables.net');
+require('./material-dashboard-pro/sweetalert2');
+require('./material-dashboard-pro/jasny-bootstrap.min');
+require('./material-dashboard-pro/fullcalendar.min');
+require('./material-dashboard-pro/jquery.tagsinput');
+require('./material-dashboard-pro/material-dashboard');
+require('./material-dashboard-pro/demo');
+
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -28,7 +52,8 @@ window.Vue = require('vue');
 window.axios = require('axios');
 
 window.axios.defaults.headers.common = {
-    'X-CSRF-TOKEN': window.Laravel.csrfToken,
+    //'X-CSRF-TOKEN': window.Laravel.csrfToken,
+    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
     'X-Requested-With': 'XMLHttpRequest'
 };
 

@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('apps/assets/img/{image}', 'AppsController@img');
+Route::get('apps/assets/img/{dir}/{image}', 'AppsController@image');
